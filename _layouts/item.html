@@ -3,6 +3,8 @@ layout: default
 gallery: true
 ---
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display-name != nil' -%}
+{% assign items = site.data.transcripts[page.filename_new] %}
+
 <div class="container py-3">
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
@@ -11,7 +13,7 @@ gallery: true
     </ul>
 
     <div class="row">
-        <div class="col-md-6" id="lightgallery">
+        <div class="col-md-4" id="lightgallery">
             <div class="card mb-4 text-center">
                 {% if page.format contains 'image' %}
                 <div class="gallery-img" data-src="{% include image/original.html %}">
@@ -50,44 +52,50 @@ gallery: true
                     <a href="{{ '/map.html#' | append: page.latitude  | append: ',' | append: page.longitude | relative_url}}" class="ml-2 btn btn-outline-info" title="View object location on map">View on Map</a>{% endif %}
                 </div>
             </div>
-        </div>
 
-        <div class="col-md-6">
             <div id="item-metadata" class="metadata">
-                {%- if page.transcript -%}
-                <header>
-                    <h2 class="poet-name"></a></h2>
-                    <p></p>
-                </header>
-
-                <table id="contents-container">
-                    <tr id="" class="{{ item.tags | replace: ";", " " }}">
-                      <td class="line">{{transcript-name}}-{{ forloop.index }}</td>
-                      <td class="words">
-                        <div id="spoken">{%if item.speaker%}{{item.speaker | remove: ":"}}: {%endif%}{{item.words}}</div>
-                      </td>
-                      <td class="timestamp">{%if item.timestamp%}
-                        <a target="_blank" href="https://youtu.be/{{ youtube-id }}?t={{item.timelink}}&cc_load_policy=1">{{item.timestamp}}</a>{% endif %}</td>
-                    </tr>
-                    {% endfor %}{% endfor %}
-                    {% else %}
-                    {% for item in items %}
-                    <tr id="{{ forloop.index }}" class="{{item.tags | replace: ";", " "}}">
-                      <td class="line">{{ forloop.index }}</td>
-                      <td class="words">
-                        <div id="spoken">{{item.speaker | remove: ":"}}: {{item.words}}</div>
-                      </td>
-                      <td class="timestamp">{%if item.timestamp%}<a target="_blank" href="https://youtu.be/{{ page.youtube }}?t={{item.timelink}}&cc_load_policy=1">{{item.timestamp}}</a>{% endif %}</td>
-                    </tr>
-                    {% endfor %}
-                    {% endif %}
-                </table>
+                <dl>
+                    {% for f in fields %}{% if page[f.field] %}
+                    <dt class="field">{{ f.display-name }}:</dt>
+                    <dd class="field-value">
+                        {% if f.browse-link == "true" %}
+                        {% assign topics = page[f.field] | split: ";" %}
+                        {% for t in topics %}
+                        <a class="filter mr-3" data-filter="{{ t | strip | escape }}" href="{{ t | strip | url_param_escape | prepend: '/browse.html#' | relative_url }}">{{ t | strip }}</a>
+                        {% endfor %}
+                        {% else %}
+                        {{ page[f.field] | replace: '""','"' }}{% endif %}
+                    </dd>
+                    {% endif %}{% endfor %}
+                </dl>
             </div>
         </div>
-    </div>
+        <div class="col-md-8">
+            {%- if page.transcript -%}
+            <div class="card p-3" style="height: 370px;">
+                <div class="card-title">
+                    <h2>{{ page.transcript_filename }}</h2>
+                </div>
+                <div class="card-text overflow-auto">
+                    <table id="contents-container">
+                        {% for item in items %}
+                        <tr id="{{ forloop.index }}" class="{{ item.tags | replace: ";", " " }}">
+                        <td class="line">{{ forloop.index }}</td>
+                        <td class="words">
+                            <div id="spoken">{{ item.speaker | remove: ":"}}: {{ item.words }}</div>
+                        </td>
+                        <td class="timestamp">{% if item.timestamp %}<a target="_blank" href="https://youtu.be/{{ page.youtube }}?t={{item.timelink}}&cc_load_policy=1">{{ item.timestamp }}</a>{% endif %}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+                    </table>
+                </div>
+            </div>
+        </div>
 
+    </div>
     <div class="row justify-content-end mt-4">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="card mb-2">
                 <div class="card-header">Source</div>
                 <div class="card-body">

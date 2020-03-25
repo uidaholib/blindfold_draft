@@ -1,0 +1,25 @@
+objectid,filename,filename_new,transcript,transcript_finished? (y),title,title_new,transcript_filename,format,musician01,musician02,musician03,image,downbeatdate_confirmed,page,vol/iss,downbeatdate_confirmed_2,page_2,vol/iss_2,notes1,notes2
+blindfold001,lf.iv.bft_adderley,adderley,adderley,,The Adderley Brothers Blindfold Test,,Adderley Brothers,audio/mp3,"Adderley, Nat","Adderly, Julian ""Cannonball""",,https://digital.lib.uidaho.edu/digital/collection/lfc/id/173/rec/1,1962-04-12,36,29/8,1962-04-26,43,29/9,Current dates are for adderly brother's interviews only,The transcript ends at 24:30 but after that there is a recording of the radio and then another interview starts. I can't find the transcript/file for that half.
+blindfold002,lf.iv.bft_blakey,blakey,blakey,,Art Blakey Interview & Blindfold Test,,Art Blakey,audio/mp3,"Blakey, Art",,,,1962-09-13,37,29/24,,,,Current dates are for Blakey only,
+blindfold003,lf.iv.bft_blakey,ellis,ellis,,Herb Ellis Blindfold Test,,Herb Ellis,audio/mp3,"Ellis, Herb",,,,1962-09-13,37,29/24,,,,"No Downbeat article found for this, so no music",
+blindfold004,lf.iv.bft_brown,brown,brown,,Oscar Brown Blindfold Test,,Oscar Brown,audio/mp3,"Brown, Oscar",,,,1962-10-11,43,29/26,,,,,Seems like the transcript cuts off early (transcript goes about 16 min but audio goes almost an hour and it sounds like same man)
+blindfold005,lf.iv.bft_desmond,desmond,desmond,,Paul Desmond Blindfold Test,,Paul Desmond,audio/mp3,"Desmond, Paul",,,,1958-10-16,43,25/21,,,,,
+blindfold006,lf.iv.bft_garner,shearing,shearing,,Erroll Garner Blindfold Test,,,audio/mp3,"Shearing, George",,,,1958-12-11,47,25/25,,,,,No transcript
+blindfold007,lf.iv.bft_gumina,gordon,gordon,,Dexter Gordon Blindfold Test,,Dexter Gordon,audio/mp3,"Gordon, Dexter",,,https://digital.lib.uidaho.edu/digital/collection/lfc/id/587/rec/2,1965-05-20,31,32/11,,,,,
+blindfold008,lf.iv.bft_hendricks,hendricks,hendricks,,Jon Hendricks Blindfold Test,,Jon Hendricks,audio/mp3,"Hendricks, Jon",,,,1960-02-18,39,27/4,,,,,
+blindfold009,lf.iv.bft_hendricks,zetterlund,zetterlund,,Monica Zetterlund Blindfold Test,,Monica Zetterlund,audio/mp3,"Zetterlund, Monica",,,https://digital.lib.uidaho.edu/digital/collection/lfc/id/251/rec/2,1960-02-04,31,27/3,,,,,
+blindfold010,lf.iv.bft_jones,russell,russell,,George Russell Blindfold Test,,George Russell,audio/mp3,"Russell, George",,,,1961-01-05,43,28/1,,,,,
+blindfold011,lf.iv.bft_kenton-holiday,kenton,kenton,,Stan Kenton Interview & Blindfold Test,,Stan Kenton,audio/mp3,"Kenton, Stan",,,,1966-09-22,43,33/19,,,,,
+blindfold012,lf.iv.bft_kenton-mccann,mccann,mccann,,Les McCann Blindfold Test,,Les McCann,audio/mp3,"McCann, Les",,,https://digital.lib.uidaho.edu/digital/collection/lfc/id/395/rec/3,1961-04-13,43,28/8,,,,Only three songs in this interview,
+blindfold013,lf.iv.bft_mandel,mandel,mandel,,"Johnny Mandel (Blindfold Test), 1958",,Johnny Mandel,audio/mp3,"Mandel, Johnny",,,,1959-03-19,43,26/6,1959-04-02,31,26/7,Mandel's interview spans two articles in two downbeat issues,
+blindfold014,lf.iv.bft_mcconnell,mcconnell,mcconnell,,Rob McConnell Blindfold Test,,Rob McConnell,audio/mp3,"McConnell, Rob",,,https://digital.lib.uidaho.edu/digital/collection/lfc/id/66/rec/2,1984-07,56,51/7,,,,,
+blindfold015,lf.iv.bft_ranford,marsalis,marsalis,,Branford Marsalis Blindfold Test,,Branford Marsalis,audio/mp3,"Marsalis, Branford",,,https://digital.lib.uidaho.edu/digital/collection/lfc/id/460/rec/5,1987-05,39,54/5,,,,,
+blindfold016,lf.iv.bft_ross,ross,ross,,Ronnie Ross Blindfold Test,,Ronnie Ross,audio/mp3,"Ross, Ronnie",,,,1958-10-02,37,25/20,,,,,
+blindfold017,lf.iv.bft_rowles,rowles,rowles,,Stacy Rowles and Jimmy Rowles Blindfold Test,,Jimmy and Stacy Rowles,audio/mp3,"Rowles, Stacy","Rowles, Jimmy",,,1987-07,51,54/7,,,,,
+blindfold018,lf.iv.bft_shorter,shorter,shorter,,Wayne Shorter Blindfold Test -- B.B. King Interview,,Wayne Shorter,audio/mp3,"Shorter, Wayne",,,,1984-03,45,51/3,,,,,
+blindfold019,lf.iv.bft_tjader,guaraldi,guaraldi,,Vince Guaraldi Blindfold Test -- Radio Show,,Vince Guaraldi,audio/mp3,"Guaraldi, Vince",,,,1965-03-25,28,32/7,,,,,
+blindfold020,lf.iv.bft_webster,webster,webster,,Ben Webster Blindfold Test,,Ben Webster,audio/mp3,"Webster, Ben",,,,1958-11-27,37,25/24,,,,,
+blindfold021,lf.iv.bft_williams,williams,williams,,"Joe Williams (Blindfold Test), February [1961?]",,Joe Williams,audio/mp3,"Williams, Joe",,,https://digital.lib.uidaho.edu/digital/collection/lfc/id/485/rec/1,1961-09-14,37,28/19,,,,,
+blindfold022,lf.iv.bft_woods-griffin,woods,woods,,Phil Woods Interview and Blindfold Test--Performances By Jackie and Roy & Stéphane Grappelli,,Phil Woods,audio/mp3,"Woods, Phil",,,,1978-10-19,32,45/17,,,,,
+blindfold023,lf.iv.bft_young,peterson,peterson,,Oscar Peterson Blindfold Test,,Oscar Peterson,audio/mp3,"Peterson, Oscar",,,,1952-01-25,12,19/2,,,,,
+blindfold024,lf.iv.bft_young,young,young,,Lester Young Blindfold Test,,Lester Young,audio/mp3,"Young, Lester",,,https://digital.lib.uidaho.edu/digital/collection/lfc/id/589/rec/3,1951-11-02,12,18/22,,,,,
