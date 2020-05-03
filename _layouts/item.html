@@ -1,7 +1,13 @@
 ---
 layout: default
-gallery: true
 ---
+
+<style>
+    #mep_0{
+        width: 100%!important;
+    }
+</style>
+
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display-name != nil' -%}
 {% assign items = site.data.transcripts[page.filename_new] %}
 
@@ -13,34 +19,25 @@ gallery: true
     </ul>
 
     <div class="row">
-        <div class="col-md-4" id="lightgallery">
+        <div class="col-md-4">
             <div class="card mb-4 text-center">
-                {% if page.format contains 'image' %}
+                <!--{% if page.format contains 'image' %}
                 <div class="gallery-img" data-src="{% include image/original.html %}">
                     <p><img src="{% include image/small.html %}" alt="item thumbnail for {{ page.title | escape }}" class="img-fluid"></p>
                     <p><small>Click to view full screen</small></p>
                 </div>
-                {%- else -%}
+                {%- else -%}-->
                 <div class="mt-4">
                     <p>
-                        {%- if page.format contains 'audio' -%}
-                        <audio controls class="w-100">
-                            <source src="{% include download/item.html %}" type="audio/mpeg">
+                        
+                        <audio class="mejs__player" preload="none" controls>
+                            <source src="{% include download/item.html %}" type="audio/mp3">
                             Your browser does not support the audio element.
                         </audio>
-                        {%- elsif page.youtubeid -%}
-                        <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{page.youtubeid}}?rel=0" allowfullscreen></iframe></div>
-                        {%- elsif page.format contains 'video' -%}
-                        <video width="320" height="240" controls>
-                            <source src="{% include download/item.html %}" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        {%- else -%}
-                        <a href="{% include download/item.html %}" target="_blank"><img src="{% include image/thumb.html %}" alt="item thumbnail for {{ page.title | escape }}" class="img-fluid thumb"></a>
-                        {%- endif -%}
+                        
                     </p>
                 </div>
-                {%- endif -%}
+                <!--{%- endif -%}-->
                 <div class="my-2">
                     {% if page.youtubeid %}
                     <a target="_blank" href="https://www.youtube.com/watch?v={{ youtubeid }}" class="btn btn-outline-info" title="Object download">View on YouTube</a>
@@ -72,7 +69,7 @@ gallery: true
         </div>
         <div class="col-md-8">
             {%- if page.transcript -%}
-            <div class="card p-3" style="height: 370px;">
+            <div class="card p-3" style="height: 700px;">
                 <div class="card-title">
                     <h2>{{ page.transcript_filename }}</h2>
                 </div>
@@ -81,8 +78,8 @@ gallery: true
                         {% for item in items %}
                         <tr id="{{ forloop.index }}" class="{{ item.tags | replace: ";", " " }}">
                         <td class="line">{{ forloop.index }}</td>
-                        <td class="words">
-                            <div id="spoken">{{ item.speaker | remove: ":"}}: {{ item.words }}</div>
+                        <td class="words py-2">
+                            <div id="spoken"><strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}: {{ item.words }}{%- endunless -%}</div>
                         </td>
                         <td class="timestamp">{% if item.timestamp %}<a target="_blank" href="https://youtu.be/{{ page.youtube }}?t={{item.timelink}}&cc_load_policy=1">{{ item.timestamp }}</a>{% endif %}</td>
                         </tr>
