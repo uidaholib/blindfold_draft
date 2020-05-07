@@ -2,8 +2,8 @@ field,display-name,browse-link,dc-map,schema-map
 title_new,Title,,DC.title,headline
 creator,Creator,,DC.creator,creator
 musicians,Musicians
-downbeat1,"Downbeat date, vol(iss), page number",DCTERMS.created,dateCreated
-downbeat2,"Second Downbeat date, vol(iss), page number"
+downbeat1,"Downbeat date, vol(iss), page",DCTERMS.created,dateCreated
+downbeat2,"Second Downbeat date, vol(iss), page"
 interviewdate,Approximated Interview Date
 description,Description,,DC.description,description
 subject,Subjects,true,DC.subject,keywords
