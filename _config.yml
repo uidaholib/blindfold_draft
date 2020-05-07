@@ -6,7 +6,7 @@
 url: https://www.lib.uidaho.edu
 # location on the domain
 # e.g. /digital/hjccc
-baseurl: /demo/blindfold
+baseurl: /digital/blindfold-draft
 
 # url to objects folder 
 digital-objects: https://www.lib.uidaho.edu/digital/objects/blindfold
@@ -15,10 +15,10 @@ digital-objects: https://www.lib.uidaho.edu/digital/objects/blindfold
 source-code: https://github.com/CollectionBuilder
 
 # Site settings
-title: Collection Builder CDM Skin
+title: Leonard Feather Blindfold Tests
 # header and head metadata
-tagline: Digital Collection Magic with Static Web Technologies
-description: "CollectionBuilder-CONTENTdm is a template for creating digital collection exhibits on top of existing CONTENTdm repositories. This demo features materials from the Frank B. Robinson Papers documenting Psychiana, a religion popular in the 1930s and 40s." 
+tagline: Blindfold tests with jazz musicians, recorded by Leonard Feather
+description: "The Blindfold Tests are series of interviews conducted by jazz critic Leonard Feather with prominent jazz musicians throughout the 20th century." 
 # Organization branding
 organization-name: "Digital Initiatives, University of Idaho Library"
 organization-link: https://www.lib.uidaho.edu/digital/
