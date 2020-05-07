@@ -2,7 +2,7 @@
 layout: page
 ---
 {%- assign items = site.data[site.metadata] -%}
-{%- assign raw-dates = site.data[site.metadata] | map: 'date' | compact | uniq -%}
+{%- assign raw-dates = site.data[site.metadata] | map: 'downbeatdate1' | compact | uniq -%}
 {%- capture clean-years -%}{% for date in raw-dates %}{% if date contains "-" %}{{ date | strip | split: "-" | first }}{% elsif date contains "/" %}{{ date | strip | split: "/" | last }}{% else %}{{ date | strip }}{% endif %}{% unless forloop.last %};{% endunless %}{%- endfor -%}{%- endcapture -%}
 {%- assign uniqueYears = clean-years | remove: " " | split: ";" | uniq | sort -%}
 {%- if site.data.theme.year-navigation -%}
@@ -34,9 +34,9 @@ layout: page
             <h3>{{ year }}</h3>
         </th>
         <td>
-            {%- assign inYear = items | where_exp: 'item', 'item.date contains year' -%}
+            {%- assign inYear = items | where_exp: 'item', 'item.downbeatdate1 contains year' -%}
             {% for item in inYear %}
-            <a href="{{ '/items/' | absolute_url | append: item.objectid | append: '.html' }}"><img class="lazyload img-thumbnail m-1" data-src="{% if item.youtubeid %}https://img.youtube.com/vi/{{ item.youtubeid }}/mqdefault.jpg{% else %}{% include image/thumb.html %}{% endif %}" alt="{{ item.title | escape }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title | escape }} | {{ item.date | escape }}"></a>
+            <a href="{{ '/items/' | absolute_url | append: item.objectid | append: '.html' }}">{% if item.image %}<img class="lazyload img-thumbnail m-1" data-src="{% include image/thumb.html %}" alt="{{ item.title_new | escape }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title_new | escape }} | {{ item.downbeatdate1 | escape }}">{% else %}{% endif %}</a>
             {% endfor %}
         </td>
     </tr>
