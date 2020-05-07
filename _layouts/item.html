@@ -9,7 +9,7 @@ layout: default
 </style>
 
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display-name != nil' -%}
-{% assign items = site.data.transcripts[page.filename_new] %}
+{% assign items = site.data.transcripts[page.transcript] %}
 
 <div class="container py-3">
     <ul class="breadcrumb">
@@ -20,35 +20,31 @@ layout: default
 
     <div class="row">
         <div class="col-md-4">
+
+            {% if page.image %}
+            <figure class="figure">
+                <img src="{{ site.digital-objects }}{{ '/small/' }}{{ page.image | append: '_sm.jpg' }}" alt="item thumbnail for {{ page.title | escape }}" class="figure-img img-fluid rounded">
+                <figcaption class="figure-caption text-center"><a class="text-muted" href="{{ page.image-link }}">{{ page.image-title}}<br><small>Image credits: {{ page.image-attribution | strip }}</small></a></figcaption>
+            </figure>
+            {%- endif -%}
+
+            {% if page.filename_new %}
             <div class="card mb-4 text-center">
-                <!--{% if page.format contains 'image' %}
-                <div class="gallery-img" data-src="{% include image/original.html %}">
-                    <p><img src="{% include image/small.html %}" alt="item thumbnail for {{ page.title | escape }}" class="img-fluid"></p>
-                    <p><small>Click to view full screen</small></p>
-                </div>
-                {%- else -%}-->
                 <div class="mt-4">
                     <p>
-                        
                         <audio class="mejs__player" preload="none" controls>
                             <source src="{% include download/item.html %}" type="audio/mp3">
                             Your browser does not support the audio element.
                         </audio>
-                        
                     </p>
                 </div>
-                <!--{%- endif -%}-->
                 <div class="my-2">
-                    {% if page.youtubeid %}
-                    <a target="_blank" href="https://www.youtube.com/watch?v={{ youtubeid }}" class="btn btn-outline-info" title="Object download">View on YouTube</a>
-                    {% else %}
-                    <a target="_blank" href="{% include download/item.html %}" class="btn btn-outline-info" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>{% endif %}
-                    {% if page.date %}{%- capture year -%}{% if page.date contains "-" %}{{ page.date | split: "-" | first }}{% elsif page.date contains "/" %}{{ page.date | split: "/" | last }}{% else %}{{ page.date }}{% endif %}{%- endcapture -%}
+                    <a target="_blank" href="{% include download/item.html %}" class="btn btn-outline-info" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
+                    {% if page.interviewdate %}{%- capture year -%}{% if page.date contains "-" %}{{ page.date | split: "-" | first }}{% elsif page.date contains "/" %}{{ page.interviewdate | split: "/" | last }}{% else %}{{ page.interviewdate }}{% endif %}{%- endcapture -%}
                     <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}" class="ml-2 btn btn-outline-info" title="View object year on timeline">View on Timeline</a>{% endif %}
-                    {% if page.latitude and page.longitude %}
-                    <a href="{{ '/map.html#' | append: page.latitude  | append: ',' | append: page.longitude | relative_url}}" class="ml-2 btn btn-outline-info" title="View object location on map">View on Map</a>{% endif %}
                 </div>
             </div>
+            {% endif %}
 
             <div id="item-metadata" class="metadata">
                 <dl>
@@ -77,11 +73,11 @@ layout: default
                     <table id="contents-container">
                         {% for item in items %}
                         <tr id="{{ forloop.index }}" class="{{ item.tags | replace: ";", " " }}">
-                        <td class="line">{{ forloop.index }}</td>
+                        <td class="line"><small>{{ forloop.index }}</small></td>
                         <td class="words py-2">
                             <div id="spoken"><strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}: {{ item.words }}{%- endunless -%}</div>
                         </td>
-                        <td class="timestamp">{% if item.timestamp %}<a target="_blank" href="https://youtu.be/{{ page.youtube }}?t={{item.timelink}}&cc_load_policy=1">{{ item.timestamp }}</a>{% endif %}</td>
+                        <td class="timestamp"><small>{% if item.timestamp %}{{ item.timestamp }}{% endif %}</small></td>
                         </tr>
                         {% endfor %}
                         {% endif %}
