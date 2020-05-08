@@ -8,7 +8,7 @@
 
 <script> 
     //title,objectid
-    var carouselItems = [ {% for c in carousel-items %}[ {{ c.title_new | escape | jsonify }}, "{{ c.objectid }}", "{{ c.image }}" ]{% unless forloop.last %}, {% endunless %}{% endfor %}];
+    var carouselItems = [ {% for c in carousel-items %}[ {{ c.title | escape | jsonify }}, "{{ c.objectid }}", "{{ c.image }}" ]{% unless forloop.last %}, {% endunless %}{% endfor %}];
     var carousel = document.getElementById("carouselInner");
     carouselItems.sort(function() { return 0.5 - Math.random() });
     var i;

@@ -15,7 +15,7 @@ layout: default
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ '/browse.html' | absolute_url }}">Items</a></li>
-        <li class="breadcrumb-item active">{{ page.title_new | truncatewords: 10 }}</li>
+        <li class="breadcrumb-item active">{{ page.title | truncatewords: 10 }}</li>
     </ul>
 
     <div class="row">
@@ -65,7 +65,7 @@ layout: default
         </div>
         <div class="col-md-8">
             {%- if page.transcript -%}
-            <h2 class="py-2">{{ page.title_new }}</h2>
+            <h2 class="py-2">{{ page.title }}</h2>
             <div class="card p-3" style="height: 700px;">
                 <div class="card-text overflow-auto">
                     <table id="contents-container">
