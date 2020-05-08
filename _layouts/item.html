@@ -15,11 +15,11 @@ layout: default
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ '/browse.html' | absolute_url }}">Items</a></li>
-        <li class="breadcrumb-item active">{{ page.title | truncatewords: 10 }}</li>
+        <li class="breadcrumb-item active">{{ page.title_new | truncatewords: 10 }}</li>
     </ul>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 pt-3">
 
             {% if page.image %}
             <figure class="figure">
@@ -40,7 +40,7 @@ layout: default
                 </div>
                 <div class="my-2">
                     <a target="_blank" href="{% include download/item.html %}" class="btn btn-outline-info" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
-                    {% if page.interviewdate %}{%- capture year -%}{% if page.date contains "-" %}{{ page.date | split: "-" | first }}{% elsif page.date contains "/" %}{{ page.interviewdate | split: "/" | last }}{% else %}{{ page.interviewdate }}{% endif %}{%- endcapture -%}
+                    {% if page.downbeatdate1 %}{%- capture year -%}{% if page.downbeatdate1 contains "-" %}{{ page.downbeatdate1 | split: "-" | first }}{% elsif page.downbeatdate1 contains "/" %}{{ page.downbeatdate1 | split: "/" | last }}{% else %}{{ page.downbeatdate1 }}{% endif %}{%- endcapture -%}
                     <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}" class="ml-2 btn btn-outline-info" title="View object year on timeline">View on Timeline</a>{% endif %}
                 </div>
             </div>
@@ -65,19 +65,17 @@ layout: default
         </div>
         <div class="col-md-8">
             {%- if page.transcript -%}
+            <h2 class="py-2">{{ page.title_new }}</h2>
             <div class="card p-3" style="height: 700px;">
-                <div class="card-title">
-                    <h2>{{ page.transcript_filename }}</h2>
-                </div>
                 <div class="card-text overflow-auto">
                     <table id="contents-container">
                         {% for item in items %}
-                        <tr id="{{ forloop.index }}" class="{{ item.tags | replace: ";", " " }}">
-                        <td class="line"><small>{{ forloop.index }}</small></td>
-                        <td class="words py-2">
-                            <div id="spoken"><strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}: {{ item.words }}{%- endunless -%}</div>
+                        <!--<tr id="{{ forloop.index }}" class="{{ item.tags | replace: ";", " " }}">
+                        <td class="line"><small>{{ forloop.index }}</small></td>-->
+                        <td class="py-2 px-4">
+                            <div><strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}: {{ item.words }}{%- endunless -%}</div>
                         </td>
-                        <td class="timestamp"><small>{% if item.timestamp %}{{ item.timestamp }}{% endif %}</small></td>
+                        <td class="pr-3"><small>{% if item.timestamp %}{{ item.timestamp }}{% endif %}</small></td>
                         </tr>
                         {% endfor %}
                         {% endif %}
