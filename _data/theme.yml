@@ -41,7 +41,7 @@ map-cluster: true # suggested for large collection or with many items in same lo
 map-cluster-radius: 25 # size of clusters, from ~ 10 to 80
 
 # Subject page
-subjects-fields: guest_author;guest_artist;guest_scientist;guest_fan # set of fields separated by ; to be featured in the cloud (leave blank or comment out to not generate)
+subjects-fields: # set of fields separated by ; to be featured in the cloud (leave blank or comment out to not generate)
 subjects-min: 1 # min size for subject cloud, too many terms = slow load time!
 subjects-stopwords: # set of subjects separated by ; that will be removed from display, e.g. boxers;boxing
 
