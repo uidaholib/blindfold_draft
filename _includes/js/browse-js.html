@@ -7,12 +7,12 @@ function makeCard(obj) {
     var itemHref = "{{ '/items/' | relative_url }}" + obj.id + ".html";
     // find images
     if(obj.image) { 
-      var imgSrc = '{{ site.digital-objects }}/thumb/' + obj.image + '_th.jpg';
+      var imgSrc = '{{ site.digital-objects }}/thumbs/' + obj.image + '_th.jpg';
     } else {
       var noImg;
     }
     // start card
-    var card = '<div class="item col-lg-4 col-md-6 col-sm-12 mb-2"><div class="card">';
+    var card = '<div class="item col-lg-3 col-md-6 col-sm-12 mb-2"><div class="card">';
     // top image for photos
     if(imgSrc) {
       card += '<a href="' + itemHref + '"> <img class="card-img-top lazyload" data-src="' + imgSrc + '" alt="Image of ' + obj.title + '"></a>';
