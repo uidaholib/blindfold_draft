@@ -36,7 +36,7 @@ layout: page
         <td>
             {%- assign inYear = items | where_exp: 'item', 'item.downbeatdate1 contains year' -%}
             {% for item in inYear %}
-            <a href="{{ '/items/' | absolute_url | append: item.objectid | append: '.html' }}">{% if item.image %}<img class="lazyload img-thumbnail m-1" data-src="{% include image/thumb.html %}" alt="{{ item.title_new | escape }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title_new | escape }} | {{ item.downbeatdate1 | escape }}">{% else %}{% endif %}</a>
+            <a href="{{ '/items/' | absolute_url | append: item.objectid | append: '.html' }}" class="text-dark">{% if item.image %}<img class="lazyload img-thumbnail m-1" data-src="{% include image/thumb.html %}" alt="{{ item.title_new | escape }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title_new | escape }} | {{ item.downbeatdate1 | escape }}">{% else %}{{ item.interviewees }}{% endif %}</a>
             {% endfor %}
         </td>
     </tr>
