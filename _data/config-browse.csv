@@ -1,3 +1,4 @@
-field,displayName,btn,hidden
+field,display_text,btn,hidden
 downbeat1,Downbeat Issue,
 downbeat2,Second Downbeat Issue,
+musicians,,,true
