@@ -2,12 +2,6 @@
 layout: default
 ---
 
-<style>
-    #mep_0{
-        width: 100%!important;
-    }
-</style>
-
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display-name != nil' -%}
 {% assign items = site.data.transcripts[page.transcript] %}
 
