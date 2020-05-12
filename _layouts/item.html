@@ -33,9 +33,10 @@ layout: default
                     </p>
                 </div>
                 <div class="my-2">
-                    <a target="_blank" href="{% include download/item.html %}" class="btn btn-outline-info" title="Object download">Download {{ page.format | split: '/' | last | upcase }}</a>
+                    <a target="_blank" href="{% include download/item.html %}" class="m2 btn btn-outline-info" title="{{ page.format }} download">Download {{ page.format | split: '/' | last | upcase }}</a>
                     {% if page.downbeatdate1 %}{%- capture year -%}{% if page.downbeatdate1 contains "-" %}{{ page.downbeatdate1 | split: "-" | first }}{% elsif page.downbeatdate1 contains "/" %}{{ page.downbeatdate1 | split: "/" | last }}{% else %}{{ page.downbeatdate1 }}{% endif %}{%- endcapture -%}
-                    <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}" class="ml-2 btn btn-outline-info" title="View object year on timeline">View on Timeline</a>{% endif %}
+                    <a target="_blank" href="{{ site.digital-objects }}/{{ 'transcripts' }}/{{ page.transcript | append: '.pdf' }}" class="m2 btn btn-outline-info" title="PDF transcript download">Download Transcript</a>
+                    <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}" class="m-2 btn btn-outline-info" title="View object year on timeline">View on Timeline</a>{% endif %}
                 </div>
             </div>
             {% endif %}
