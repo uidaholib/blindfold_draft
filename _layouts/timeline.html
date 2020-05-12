@@ -36,7 +36,7 @@ layout: page
         <td>
             {%- assign inYear = items | where_exp: 'item', 'item.downbeatdate1 contains year' -%}
             {% for item in inYear %}
-            <a class="d-inline-block m-1 text-dark" href="{{ '/items/' | absolute_url | append: item.objectid | append: '.html' }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title | escape }} | {{ item.downbeatdate1 | escape }}" >{% if item.image %}<img class="lazyload img-thumbnail" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{% if item.youtubeid %}https://img.youtube.com/vi/{{ item.youtubeid }}/mqdefault.jpg{% else %}{% include image/thumb.html %}{% endif %}" alt="{{ item.title | escape }}" >{% else %}{{ item.interviewees }}{% endif %}</a>
+            <a class="d-inline-block m-1 text-dark" href="{{ '/items/' | absolute_url | append: item.objectid | append: '.html' }}" data-toggle="tooltip" data-placement="bottom" title="{{ item.title | escape }} | {{ item.downbeatdate1 | escape }}" >{% if item.image %}<img class="lazyload img-thumbnail" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3 2'%3E%3C/svg%3E" data-src="{% if item.youtubeid %}https://img.youtube.com/vi/{{ item.youtubeid }}/mqdefault.jpg{% else %}{% include image/thumb.html %}{% endif %}" alt="{{ item.title | escape }}" >{% else %}<div class="card p-2">{{ item.interviewees }}</div>{% endif %}</a>
             {% endfor %}
         </td>
     </tr>
