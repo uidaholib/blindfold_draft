@@ -1,4 +1,4 @@
-<footer class="bg-dark pt-4 container-fluid {% unless page.layout=='map' %}mt-3{% endunless %}">
+<footer class="bg-dark pt-4 container-fluid {% unless page.permalink contains 'about.html' %}mt-3{% endunless %}">
 
     <div class="row border-bottom border-white pb-4 mb-2">
 
@@ -36,7 +36,7 @@
 
     <div class="col-md-12 text-center pt-3 pb-1">
         <a href="https://www.lib.uidaho.edu/digital/"><img class="img-fluid mb-2 footer-diginit" src="https://www.lib.uidaho.edu/media/digital/bannerlogo_allwhite.png" alt="University of Idaho Library Digital Initiatives home"></a>
-        <p class="text-white h6"><em></em>Collection last updated: {{ site.time | date: '%Y' }}</em></p>
+        <p class="text-white h6 py-3"><em></em>Collection last updated: {{ site.time | date: '%Y' }}</em></p>
     </div>
 
 </footer>
