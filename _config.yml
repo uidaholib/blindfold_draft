@@ -11,6 +11,9 @@ baseurl: /digital/blindfold
 # url to objects folder 
 digital-objects: https://www.lib.uidaho.edu/digital/objects/blindfold
 
+# url to shared assets folder on Digital:
+digital-assets: https://www.lib.uidaho.edu/assets
+
 # location of code
 source-code: https://github.com/CollectionBuilder
 
