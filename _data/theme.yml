@@ -19,9 +19,9 @@ featured-locations-max: 3
 # Data 
 # add metadata fields for export in data downloads (tip: paste in first row of csv)
 # comma delimited list, reference url is automatic
-metadata-export-fields: "objectid,filename,title_full,title,date,conference_dates,description,guest_author,guest_artist,guest_scientist,guest_fan,committee,cover_artist,inside_cover_artist,back_artist,badge_artist,button_artist,creator,guests_of_honor,program_artists,feature_subjects,subject,identifier,location,digital_collection,contributing_institution,rights,standardized_rights,format_original,type,format,language"
+metadata-export-fields: "objectid,filename_old,filename,transcript,title_old,title,description,subject,interviewees,creator,format,musicians,image,image-link,image-attribution,image-title,interviewdate,date-is-approximate,downbeat1,downbeatdate1,page,vol_iss,downbeat2,downbeatdate2,page2,vol_iss2,source,rights,righsstatement"
 # generate a facets list for given fields, comma delimited
-metadata-facets-fields: "guest_author,guest_artist,guest_scientist,guest_fan"
+metadata-facets-fields: "downbeat1,downbeat2"
 
 # Browse page
 # see _data/browse-config.csv for field display options

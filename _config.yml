@@ -15,7 +15,7 @@ digital-objects: https://www.lib.uidaho.edu/digital/objects/blindfold
 digital-assets: https://www.lib.uidaho.edu/assets
 
 # location of code
-source-code: https://github.com/CollectionBuilder
+source-code: https://github.com/uidaholib/blindfold_draft
 
 # Site settings
 title: Leonard Feather Blindfold Tests
