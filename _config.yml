@@ -6,7 +6,7 @@
 url: https://www.lib.uidaho.edu
 # location on the domain
 # e.g. /digital/hjccc
-baseurl: /digital/blindfold-draft
+baseurl: /digital/blindfold
 
 # url to objects folder 
 digital-objects: https://www.lib.uidaho.edu/digital/objects/blindfold
