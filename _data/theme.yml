@@ -51,7 +51,7 @@ locations-min: 1 # min size for subject cloud, too many terms = slow load time!
 locations-stopwords: # set of subjects separated by ; that will be removed from display, e.g. boxers;boxing
 
 # Timeline
-year-navigation: #"1900;1905;1910;1915;1920" # manually set years to appear in dropdown nav
+year-navigation: "1951;1960;1966;1987" # manually set years to appear in dropdown nav
 year-nav-increment: 5 # set increments to auto gen nav years
 
 # Advanced Theme Options
