@@ -56,7 +56,7 @@ layout: default
                 <div class="card-text">
                     <div class="row ">
                         <p class="col-lg-9 mt-4">
-                            <audio class="mejs__player " preload="none" controls>
+                            <audio id="audio-player" class="w-100" preload="none" controls>
                                 <source src="{% include download/item.html %}" type="audio/mp3">
                                 Your browser does not support the audio element.
                             </audio>
@@ -69,6 +69,7 @@ layout: default
                             <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}"
                                 class="w-100 mt-2 btn btn-outline-info" title="View object year on timeline">View on
                                 Timeline</a>{% endif %}
+                                <a class="button-seek" href="#">Seek</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +88,7 @@ layout: default
                                     <strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}:
                                     {{ item.words }}{%- endunless -%}</div>
                             </td>
-                            <td class="pr-3"><small>{% if item.timestamp %}{{ item.timestamp }}{% endif %}</small></td>
+                            <td class="pr-3"><small>{% if item.timestamp %}<a href="#" onclick="document.getElementById('#audio-player').currentTime(129);" class="timestamp" data-timestamp="120">{{ item.timestamp }}</a>{% endif %}</small></td>
                         </tr>
                         {% endfor %}
                         {% endif %}
@@ -158,3 +159,4 @@ layout: default
     </div>
     {%- endif -%}
 </div>
+
