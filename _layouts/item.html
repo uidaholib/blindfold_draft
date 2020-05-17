@@ -5,6 +5,7 @@ layout: default
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display-name != nil' -%}
 {% assign items = site.data.transcripts[page.transcript] %}
 {% assign downbeat1 = page.downbeat1 | split: ","%}
+{% assign downbeat2 = page.downbeat2 | split: "," %}
 {% if page.start-time %}{% capture start-time %}{% include timestamp/start-time.html %}{% endcapture %}{%else%}{% capture start-time %}0{% endcapture %}{% endif %}
 <div class="container py-3">
     <ul class="breadcrumb">
@@ -13,11 +14,14 @@ layout: default
         <li class="breadcrumb-item active">{{ page.title | truncatewords: 10 }} {{start-time}}</li>
     </ul>
     <div class="row mt-4 mb-2">
-        <div class="col-12 my-0 row">
-            <h2 class="col-md mt-2">{{ page.title }}</h2>
-            {% if page.downbeatdate1 %}<h4 class="text-uppercase col-md mt-1"><em> {{ downbeat1[0] }} <br>Volume 
-                {{ downbeat1[1] }}, {{ downbeat1[2] }}</em></h4>{% endif %}
-
+        <div class="col-md-12">
+            <h2 class="mt-2">{{ page.title }}</h2>
+            {% if page.downbeatdate1 %}
+                <h4 class="col-md mt-1"><em>Published in Downbeat Magazine, Volume {{ downbeat1[1] }}, {{ downbeat1[2] }} ({{ downbeat1[0] }})</em>
+            {% endif %}
+            {% if page.downbeatdate2 %}
+                <h4 class="col-md mt-1"><em>Second half published in Downbeat Magazine, Volume {{ downbeat2[1] }}, {{ downbeat2[2] }} ({{ downbeat2[0] }})</em>
+            {% endif %}
         </div>
     </div>
     <div class="row">
@@ -55,14 +59,14 @@ layout: default
             {% if page.filename %}
             <div class="card p-2 mb-2">
                 <div class="card-text">
-                    <div class="row ">
+                    <div class="row">
                         <p class="col-lg-9 mt-4">
                             <audio id="audio-player" class="w-100" preload="none" controls>
                                 <source src="{% include download/item.html %}" type="audio/mp3">
                                 Your browser does not support the audio element.
                             </audio>
                         </p>
-                        <div class="col-lg-3">
+                        <div class="col-lg-3 align-self-center">
                             <a target="_blank" href="{% include download/item.html %}"
                                 class="btn btn-outline-info w-100" title="{{ page.format }} download">Download
                                 {{ page.format | split: '/' | last | upcase }}</a>
