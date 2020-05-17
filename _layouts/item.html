@@ -69,7 +69,7 @@ layout: default
                             <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}"
                                 class="w-100 mt-2 btn btn-outline-info" title="View object year on timeline">View on
                                 Timeline</a>{% endif %}
-                                <a class="button-seek" href="#">Seek</a>
+                               
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@ layout: default
                                     <strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}:
                                     {{ item.words }}{%- endunless -%}</div>
                             </td>
-                            <td class="pr-3"><small>{% if item.timestamp %}<a href="#" onclick="document.getElementById('#audio-player').currentTime(129);" class="timestamp" data-timestamp="120">{{ item.timestamp }}</a>{% endif %}</small></td>
+                            <td class="pr-3"><small>{% if item.timestamp %}{% capture tot-seconds %}{% include timestamp/total-seconds.html %}{% endcapture %}<a href="#{{tot-seconds}}" class="timestamp" data-timestamp="{{tot-seconds}}">{{ item.timestamp }}</a>{% endif %}</small></td>
                         </tr>
                         {% endfor %}
                         {% endif %}
