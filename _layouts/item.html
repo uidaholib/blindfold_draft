@@ -5,11 +5,12 @@ layout: default
 {%- assign fields = site.data.config-metadata | where_exp: 'item', 'item.display-name != nil' -%}
 {% assign items = site.data.transcripts[page.transcript] %}
 {% assign downbeat1 = page.downbeat1 | split: ","%}
+{% if page.start-time %}{% capture start-time %}{% include timestamp/start-time.html %}{% endcapture %}{%else%}{% capture start-time %}0{% endcapture %}{% endif %}
 <div class="container py-3">
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
         <li class="breadcrumb-item"><a href="{{ '/browse.html' | absolute_url }}">Items</a></li>
-        <li class="breadcrumb-item active">{{ page.title | truncatewords: 10 }}</li>
+        <li class="breadcrumb-item active">{{ page.title | truncatewords: 10 }} {{start-time}}</li>
     </ul>
     <div class="row mt-4 mb-2">
         <div class="col-12 my-0 row">
@@ -88,7 +89,7 @@ layout: default
                                     <strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}:
                                     {{ item.words }}{%- endunless -%}</div>
                             </td>
-                            <td class="pr-3"><small>{% if item.timestamp %}{% capture tot-seconds %}{% include timestamp/total-seconds.html %}{% endcapture %}<a href="#{{tot-seconds}}" class="timestamp" data-timestamp="{{tot-seconds}}">{{ item.timestamp }}</a>{% endif %}</small></td>
+                            <td class="pr-3"><small>{% if item.timestamp %}{% capture tot-seconds %}{% include timestamp/total-seconds.html %}{% endcapture %}<a href="#{{ tot-seconds | minus: start-time }}" class="timestamp" data-timestamp="{{tot-seconds | minus: start-time }}">{{ item.timestamp }}</a>{% endif %}</small></td>
                         </tr>
                         {% endfor %}
                         {% endif %}
