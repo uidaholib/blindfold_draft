@@ -1,5 +1,4 @@
 field,display-name,browse-link,dc-map,schema-map
-title,Title,,DC.title,headline
 creator,Creator,,DC.creator,creator
 musicians,Musicians
 downbeat1,"Downbeat date, vol(iss), page",DCTERMS.created,dateCreated

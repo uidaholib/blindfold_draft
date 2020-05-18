@@ -1,0 +1,1 @@
+{%capture hours_to_sec %}{{page.start-time | date: '%H' | times: 3600}}{% endcapture %}{%capture min_to_sec %}{{page.start-time | date: '%H' | times: 60}}{% endcapture %}{%capture start_time %}{{page.start-time | date: '%M' | plus: min_to_sec}}{% endcapture %}{{start_time}}

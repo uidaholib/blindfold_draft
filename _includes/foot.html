@@ -12,7 +12,25 @@
 {% if page.layout == "map" %}{% include js/map-js.html %}{% endif %}
 {% if page.layout == "item" %}
 {% include js/arrow-page-control-js.html %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mediaelement/4.2.16/mediaelement-and-player.min.js"></script>
+<script>
+ var mediaElement = document.getElementById('audio-player');
+   $('.timestamp').click( function(){
+    if (mediaElement.duration > 0 && !mediaElement.paused) {
+
+//Its playing...do your job
+var timeSought = $(this).data('timestamp');
+    mediaElement.currentTime = timeSought
+} else {
+
+//Not playing...maybe paused, stopped or never played.
+mediaElement.play();
+var timeSought = $(this).data('timestamp');
+    mediaElement.currentTime = timeSought
+}
+   
+   });
+</script>
+
 {% endif %}
 {%- if page.layout == "home-infographic" %}{% include js/carousel-js.html %}{% endif -%}
 {% if page.layout == "search" %}{% include js/lunr-js.html %}{% endif %}
