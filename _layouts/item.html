@@ -7,6 +7,7 @@ layout: default
 {% assign downbeat1 = page.downbeat1 | split: ","%}
 {% assign downbeat2 = page.downbeat2 | split: "," %}
 {% capture start-time %}0{% endcapture %}
+
 <div class="container py-3">
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
@@ -53,7 +54,7 @@ layout: default
             </div>
         </div>
         <div class="col-md-8 order-first">
-            {% if page.filename %}
+            {%- if page.filename -%}
             <div class="card p-2 mb-2">
                 <div class="card-text">
                     <div class="row">
@@ -64,8 +65,7 @@ layout: default
                             </audio>
                         </p>
                         <div class="col-lg-3 align-self-center">
-                            <a target="_blank" href="{% include download/item.html %}" class="btn btn-outline-info w-100" title="{{ page.format }} download">Download
-                                {{ page.format | split: '/' | last | upcase }}</a>
+                            <a target="_blank" href="{% include download/item.html %}" class="btn btn-outline-info w-100" title="{{ page.format }} download">Download {{ page.format | split: '/' | last | upcase }}</a>
                             {% if page.downbeatdate1 %}{%- capture year -%}{% if page.downbeatdate1 contains "-" %}{{ page.downbeatdate1 | split: "-" | first }}{% elsif page.downbeatdate1 contains "/" %}{{ page.downbeatdate1 | split: "/" | last }}{% else %}{{ page.downbeatdate1 }}{% endif %}{%- endcapture -%}
                             <a href="{{ year | strip | prepend: '/timeline.html#' | relative_url }}" class="w-100 mt-2 btn btn-outline-info" title="View object year on timeline">View on
                                 Timeline</a>{% endif %}
@@ -74,25 +74,31 @@ layout: default
                     </div>
                 </div>
             </div>
-            {% endif %}
+            {%- endif -%}
             {%- if page.transcript -%}
             <div class="card p-3" style="height: 700px;">
                 <div class="card-text overflow-auto">
                     <table id="contents-container">
-                        {% for item in items %}
+                        {%- for item in items -%}
                         <tr>
                             <td class="py-2 px-4">
                                 <div>
-                                    <strong>{{ item.speaker | remove: ":"}}</strong>{%- unless item.speaker contains 'Plays' -%}:
-                                    {{ item.words }}{%- endunless -%}</div>
+                                    {% if item.speaker contains 'Plays' and item.words %}
+                                    <strong><a href="{{ item.words }}" target="_blank" rel="noopener">{{ item.speaker }}</a></strong>
+                                    {% elsif item.speaker contains 'Plays' %}
+                                    <strong>{{ item.speaker }}</strong>
+                                    {% else %}
+                                    <strong>{{ item.speaker }}</strong>: {{ item.words }}
+                                    {% endif %}
+                                </div>
                             </td>
-                            <td class="pr-3"><small>{% if item.timestamp %}{% capture tot-seconds %}{% include timestamp/total-seconds.html %}{% endcapture %}<a href="#{{ tot-seconds | minus: start-time }}" class="timestamp" data-timestamp="{{tot-seconds | minus: start-time }}">{{ item.timestamp }}</a>{% endif %}</small></td>
+                            <td class="pr-3"><small>{% if item.timestamp %}{% capture tot-seconds %}{% include timestamp/total-seconds.html %}{% endcapture %}<a href="#{{ tot-seconds | minus: start-time }}" class="timestamp" data-timestamp="{{ tot-seconds | minus: start-time }}">{{ item.timestamp }}</a>{% endif %}</small></td>
                         </tr>
-                        {% endfor %}
-                        {% endif %}
+                        {%- endfor -%}
                     </table>
                 </div>
             </div>
+            {%- endif -%}
         </div>
 
     </div>
