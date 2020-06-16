@@ -1,13 +1,15 @@
 {% if site.data.theme.featured-image-objectid %}{% assign bannerItem = site.data[site.metadata] | where: 'objectid', site.data.theme.featured-image-objectid %}{%- endif -%}
 <style>
 #jumbo-feature {
-    background-image: url('{% include image/featured-image.html %}');
+    background-image: url('https://www.lib.uidaho.edu/digital/objects/blindfold/lfc_213_full(1).jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: {{ site.data.theme.home-banner-image-position | default: top }};
+    background-position: top;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
 }
 </style>
-<div class="jumbotron feature px-0 py-5 border" id="jumbo-feature">
+<div class="jumbotron feature px-0 border" id="jumbo-feature">
     <div id="home-title-box">
         <div class="title-card p-2 text-center">
             <h1 class="display-4">{{ site.title }}</h1>
