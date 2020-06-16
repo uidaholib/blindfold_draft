@@ -1,1 +1,1 @@
-{%capture hours_to_sec %}{{item.timestamp | date: '%H' | times: 3600}}{% endcapture %}{%capture min_to_sec %}{{item.timestamp | date: '%H' | times: 60}}{% endcapture %}{%capture total_sec %}{{item.timestamp | date: '%M' | plus: min_to_sec}}{% endcapture %}{{total_sec}}
+{% capture hours_to_sec %}{{ item.timestamp | date: '%H' | times: 3600 }}{% endcapture %}{% capture min_to_sec %}{{ item.timestamp | date: '%M' | times: 60 }}{% endcapture %}{% capture total_sec %}{{ item.timestamp | date: '%S' | plus: min_to_sec }}{% endcapture %}{{ total_sec }}

@@ -6,7 +6,7 @@ layout: default
 {% assign items = site.data.transcripts[page.transcript] %}
 {% assign downbeat1 = page.downbeat1 | split: ","%}
 {% assign downbeat2 = page.downbeat2 | split: "," %}
-{% if page.start-time %}{% capture start-time %}{% include timestamp/start-time.html %}{% endcapture %}{%else%}{% capture start-time %}0{% endcapture %}{% endif %}
+{% capture start-time %}0{% endcapture %}
 <div class="container py-3">
     <ul class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ '/' | absolute_url }}">Home</a></li>
