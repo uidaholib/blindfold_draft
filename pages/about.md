@@ -85,7 +85,7 @@ One example of Feather’s agenda in pursuing these issues can be seen in Paul D
 | **LF**: | That's right. |
 {% endcapture %}
 
-<div class="row justify-content-center">
+<div class="row justify-content-center py-3">
 <div class="col-md-8">
 {% include feature/card.html header="Leonard Feather and Paul Desmond, Blindfold Test" text=table width=25 %}
 </div>

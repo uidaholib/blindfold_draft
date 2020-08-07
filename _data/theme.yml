@@ -8,7 +8,7 @@ featured-image-objectid: # use objectid of a item from collection
 featured-image-link: https://www.lib.uidaho.edu/digital/objects/blindfold/young.jpg # full url to img if NOT using objectid 
 home-title-y-padding: 10em # the margin from the top your title portion will appear.
 home-banner-image-position: center # [options: top, center, bottom] Default: top
-carousel-height: 500 # in px, but don't include the "px"; default is 450.
+carousel-height: 400 # in px, but don't include the "px"; default is 450.
 # carousel can feature specific item types: image,pdf,youtube,thumbs
 carousel-type: image
 featured-subjects: #separate semi-colon(';') - if left blank, will be automatically generated to create top 5 subjects

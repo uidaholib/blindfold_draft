@@ -32,5 +32,5 @@ var timeSought = $(this).data('timestamp');
 </script>
 
 {% endif %}
-{%- if page.layout == "home-infographic" %}{% include js/carousel-js.html %}{% endif -%}
+{%- if page.layout == "home-infographic" %}{% include js/carousel-js.html %}{% include js/quotes-js.html %}{% endif -%}
 {% if page.layout == "search" %}{% include js/lunr-js.html %}{% endif %}

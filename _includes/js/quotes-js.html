@@ -1,0 +1,16 @@
+{%- assign quotes = site.data.blindfold-quotes -%}
+<script> 
+    var quoteItems = [{% for q in quotes %}{ "objectid": {{ q.objectid | jsonify }}, "speaker": "{{ q.speaker }}", "words": "{{ q.words }}" }{% unless forloop.last %}, {% endunless %}{% endfor %}];
+
+    function random_item(items){
+        return items[Math.floor(Math.random()*items.length)]; 
+        }
+    var value = random_item(quoteItems);
+
+    var itemHref = "{{ '/items/' | relative_url }}" + value.objectid + ".html";
+
+    var feature = '<div class="card mb-3"><div class="card-header">Featured Quote:</div><div class="card-body"><p class="px-3 pt-2"><a href="' + itemHref + '" class="text-dark">' + value.words + '</a></p><p class="text-right pr-4">—— <em>' + value.speaker + '</em></p></div></div>';
+
+    document.getElementById('feature-quote').innerHTML = feature;
+    
+</script>
