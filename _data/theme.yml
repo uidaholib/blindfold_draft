@@ -16,6 +16,13 @@ featured-subjects-max: 6 # set number of top subjects to display if auto generat
 featured-locations: Moscow, ID #separate by semi-colon(';') - if left blank, will be automatically generated to create top 5 locations
 featured-locations-max: 3
 
+##########
+# ABOUT PAGE
+#
+# Featured image on About page - if left blank, CB will use image featured on the home page
+# use either an objectid (from an item in this collect), a relative location of an image in this repo, or a full url to an image elsewhere
+about-featured-image: https://www.lib.uidaho.edu/digital/objects/blindfold/young.jpg
+
 # Data 
 # add metadata fields for export in data downloads (tip: paste in first row of csv)
 # comma delimited list, reference url is automatic
