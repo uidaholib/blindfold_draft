@@ -36,13 +36,16 @@ And in his opinion, the experts were not critics like himself or the public, but
 And so the idea for the Blindfold Test was born, and its classic formula would remain consistent across multiple publication venues for almost fifty years. 
 The design was simple: Feather would play several selections for a “blindfolded” jazz musician, who was not shown the record or given any information about the song that was played.
 The musician would listen to the piece, then give Feather their guess as to who was playing. 
-Feather also wanted musicians to talk about the style of the selections, and to rate them on a scale of one to five stars.
+Feather also wanted musicians to talk about the style of the selections, and to give them a quality score of one to five.
+In these discussions, musicians voiced their opinions about recordings, the jazz art form, and the practice of being a professional jazz musician.
 
 A typical session lasted anywhere from 5-10 musical selections and was usually recorded by Feather. 
 Afterwards, Feather would edit and transcribe the musicians’ responses into writing, then publish them in popular jazz journals.
 
 Feather's first blindfold test appeared in the September 1946 issue of *Metronome* magazine, where it became a regular monthly feature before migrating to three other journals and onto the radio airwaves throughout the rest of his career.
 Over the course of his career, Feather conducted several hundred tests, and it’s safe to say they included almost every famous jazz artist and were representative of almost all major jazz styles.
+
+Just a few of the musicians who participated in the Blindfold Tests include Oscar Peterson, Count Basie, Carmen McRae, Quincy Jones, Dave Brubeck, John Coltrane, Dinah Washington, Dizzy Gillespe, Miles Davis, Charlie Parker, Aretha Franklin, Chick Corea, Maynard Ferguson, and Wynton Marsalis.
 
 ## A Pivotal Moment in Jazz History
 
