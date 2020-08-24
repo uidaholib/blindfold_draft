@@ -71,26 +71,27 @@ One example of Feather’s agenda in pursuing these issues can be seen in Paul D
 
 {% capture table %}
 |     ---: | -------- |
-| **Feather (LF)**: | Well, ah, one thing that might surprise you, or it might not, is that all the records I played were made on the west coast. |
-| **Desmond (PD)**: | [sighs] Oh |
-| **LF**: | It doesn't, I don't think it proves anything either way, but it ah, it sort of might be of interest. I was just wondering what we can, uh? |
-| **PD**: | That is interesting. |
-| **LF**: | Does it demonstrate anything? |
-| **PD**: | Demonstrates that they have recording studios at both ends of the continent, and that people travel. |
-| **LF**: | Yeah, I guess that’s—, and you get all styles on both coasts, right? |
-| **PD**: | Certainly, I never said anything to the contrary. |
-| **LF**: | No, but so many people have |
-| **PD**: | Oh |
-| **LF**: | and coming from an authoritative voice, it might carry some weight. If you'd, but you haven't said that. |
-| **PD**: | I always thought it was the critics more than anyone else who fostered the East Coast-West Coast… |
-| **LF**: | I think so too. |
-| **PD**: | dichotomy because they need things to write about. They're professional pigeonholers. |
-| **LF**: | That's right. |
+| **Feather**: | Well, ah, one thing that might surprise you, or it might not, is that all the records I played were made on the west coast. |
+| **Desmond**: | [sighs] Oh |
+| **Feather**: | It doesn't, I don't think it proves anything either way, but it ah, it sort of might be of interest. I was just wondering what we can, uh? |
+| **Desmond**: | That is interesting. |
+| **Feather**: | Does it demonstrate anything? |
+| **Desmond**: | Demonstrates that they have recording studios at both ends of the continent, and that people travel. |
+| **Feather**: | Yeah, I guess that’s—, and you get all styles on both coasts, right? |
+| **Desmond**: | Certainly, I never said anything to the contrary. |
+| **Feather**: | No, but so many people have |
+| **Desmond**: | Oh |
+| **Feather**: | and coming from an authoritative voice, it might carry some weight. If you'd, but you haven't said that. |
+| **Desmond**: | I always thought it was the critics more than anyone else who fostered the East Coast-West Coast… |
+| **Feather**: | I think so too. |
+| **Desmond**: | dichotomy because they need things to write about. They're professional pigeonholers. |
+| **Feather**: | That's right. |
+{: .table .table-striped}
 {% endcapture %}
 
 <div class="row justify-content-center py-3">
 <div class="col-md-8">
-{% include feature/card.html header="Leonard Feather and Paul Desmond, Blindfold Test" text=table width=25 %}
+{% include feature/card.html header="Leonard Feather and Paul Desmond, Blindfold Test Excerpt" text=table width=25 %}
 </div>
 </div>
 
