@@ -11,6 +11,7 @@ permalink: /about.html
 {% include feature/nav-menu.html sections="Leonard Feather;The Blindfold Tests;A Pivotal Moment in Jazz History;The Blindfold Tests at the University of Idaho;Contributors" %}
 
 ## Leonard Feather
+_Essay by Berry International Jazz Fellowship Recipients Mitchell Gibbs and Liam Marchant_
 
 Feather was born in London in 1914, and he fell in love with jazz after hearing a 1928 recording of “West End Blues” by Louis Armstrong and his Hot Five. 
 While young, he learned jazz piano and began experimenting with jazz composition. 
